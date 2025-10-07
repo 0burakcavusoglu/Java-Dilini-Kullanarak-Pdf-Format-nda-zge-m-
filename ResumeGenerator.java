@@ -28,7 +28,7 @@ public class ResumeGenerator {
 
             PDPageContentStream cs = new PDPageContentStream(doc, page);
 
-            // Fotoğraf (sağ üstte)
+     
             File photoFile = new File(photoPath);
             if (photoFile.exists()) {
                 PDImageXObject img = PDImageXObject.createFromFile(photoPath, doc);
@@ -37,7 +37,7 @@ public class ResumeGenerator {
                 System.out.println("Uyarı: Fotoğraf bulunamadı.");
             }
 
-            // Başlık
+           
             cs.beginText();
             cs.setFont(PDType1Font.HELVETICA_BOLD, 20);
             cs.newLineAtOffset(50, 770);
@@ -56,14 +56,14 @@ public class ResumeGenerator {
             cs.showText(email + " | " + phone + " | " + location);
             cs.endText();
 
-            // Özet
+         
             cs.beginText();
             cs.setFont(PDType1Font.HELVETICA, 11);
             cs.newLineAtOffset(50, 690);
             cs.showText(summary);
             cs.endText();
 
-            // İş Deneyimi
+          
             cs.beginText();
             cs.setFont(PDType1Font.HELVETICA_BOLD, 13);
             cs.newLineAtOffset(50, 650);
@@ -101,7 +101,7 @@ public class ResumeGenerator {
                 y -= 25;
             }
 
-            // Eğitim
+            
             cs.beginText();
             cs.setFont(PDType1Font.HELVETICA_BOLD, 13);
             cs.newLineAtOffset(50, y);
@@ -122,4 +122,5 @@ public class ResumeGenerator {
             e.printStackTrace();
         }
     }
+
 }
